@@ -37,6 +37,7 @@ list_cotes = outils.get_text_list(driver.find_elements_by_xpath("//span[@class='
 list_dates = outils.get_text_list(driver.find_elements_by_class_name("datetime"))
 list_championnats = outils.get_text_list(driver.find_elements_by_xpath("//span[@class='competition']"))
 liste_joueurs = outils.get_text_list(driver.find_elements_by_tag_name("strong"))
+liste_joueurs = liste_joueurs[1::]
 
 
 outils.afficher_resultat_10(list_noms, list_cotes, liste_joueurs, list_dates, list_championnats)

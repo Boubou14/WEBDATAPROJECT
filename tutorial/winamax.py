@@ -10,14 +10,9 @@ options.add_argument("headless")
 options.add_argument("--window-size=1920,1080")
 
 driver = webdriver.Firefox(options=options)
-driver.get("https://www.winamax.fr/paris-sportifs/sports/1")
+driver.get("https://www.matchendirect.fr/resultat-foot-01-03-2022/")
 
 time.sleep(5)
-"""
-driver.find_element_by_xpath("//button[@class='sc-kTLXwr giFOuQ']").click()
-time.sleep(2)
-driver.find_element_by_xpath("//p[@class='sc-euehnN dxXwnp']").click()
-time.sleep(2)"""
 SCROLL_PAUSE_TIME = 1
 
 last_height = driver.execute_script("return document.body.scrollHeight")
@@ -38,7 +33,6 @@ while True:
         if new_height == last_height:
             break
     last_height = new_height
-
 
 list_noms1 = outils.get_text_list(driver.find_elements_by_xpath("//span[@class='sc-kMOkjD sc-czgevV jZjyro ivSlSu']"))
 list_noms2 = outils.get_text_list(driver.find_elements_by_xpath("//span[@class='sc-kMOkjD sc-jHMygC jZjyro hhnEbP']"))
